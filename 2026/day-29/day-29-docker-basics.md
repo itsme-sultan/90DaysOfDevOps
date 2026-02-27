@@ -31,8 +31,8 @@ To solve this issue we need containerso sp that we have can smilar environment a
 Draw or describe the Docker architecture in your own words.  
 -Docker Client -thorugh this we interact with docker like CLI opr docker deksptop app  
 -Docker Engine  
--Docker Daemon  
--Docker Registry  
+-Docker Daemon  - Brain of the container --> it create images, run container, manager network & volume.- Runs in the background.
+-Docker Registry  -Store the docker Image --> Privet & public -->doker hub is example of public registry
 
 ---
 
