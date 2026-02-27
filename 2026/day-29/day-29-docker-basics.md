@@ -19,20 +19,20 @@ You will:
 ## Challenge Tasks
 
 ### Task 1: What is Docker?
--Docker is a platform for building, running, and managing containers.
--A container is a lightweight, portable package that includes everything needed to run an application: the code, dependencies, libraries, and configuration.
--Why we need container :
-Imagin a situation where devolper devlop a code and it runs in his machine however client said its not ruuning in mine. It happened because of environemnt defference, different os, different version.
+-Docker is a platform for building, running, and managing containers.  
+-A container is a lightweight, portable package that includes everything needed to run an application: the code, dependencies, libraries, and configuration.  
+-Why we need container :  
+Imagin a situation where devolper devlop a code and it runs in his machine however client said its not ruuning in mine. It happened because of environemnt defference, different os, different version.  
 To solve this issue we need containerso sp that we have can smilar environment and our codr run without failur.
-- Containers vs Virtual Machines — what's the real difference?
+- Containers vs Virtual Machines — what's the real difference?  
   VM need allocation of the resource that means we need to dedicated hardware while container use shared resource and once we delete the container all resources is free and available for the use.
 - What is the Docker architecture? (daemon, client, images, containers, registry)
 
-Draw or describe the Docker architecture in your own words.
--Docker Client -thorugh this we interact with docker like CLI opr docker deksptop app
--Docker Engine
--Docker Daemon
--Docker Registry
+Draw or describe the Docker architecture in your own words.  
+-Docker Client -thorugh this we interact with docker like CLI opr docker deksptop app  
+-Docker Engine  
+-Docker Daemon  
+-Docker Registry  
 
 ---
 
