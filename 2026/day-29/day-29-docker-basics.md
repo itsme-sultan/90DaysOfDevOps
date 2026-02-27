@@ -37,10 +37,16 @@ Draw or describe the Docker architecture in your own words.
 ---
 
 ### Task 2: Install Docker
-1. Install Docker on your machine (or use a cloud instance)
-2. Verify the installation
-3. Run the `hello-world` container
-4. Read the output carefully — it explains what just happened
+1. Installed the docker on cloud instance  
+   `apt install docker.io`
+3. Verify the installation using command
+   `
+   docker -v`
+5. Run the hello-world container using command  
+   `
+   docker run hello-world`
+   
+7. Read the output carefully — it explains what just happened
 
 ---
 
