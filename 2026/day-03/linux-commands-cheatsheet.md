@@ -11,15 +11,15 @@
 ## File system
 1. `touch` -create an empty file
 2. `pwd` - to check current working directory
-3. `ls` - to list all the file and directory
+3. `ls` - list all the file and directory
 4. `cat` - display the content of the file
-5. `top X` -display last 10 line of file X
+5. `head X` -display first 10 line of file X
 6. `tail X` - display last 10 line of file X
 7. `mkdir X` - create a new directory
 8. `cp source dest` - copy file
 9. `mv source dest` - move the file
-10. `chmod 777 X` - chnage the file permission
-11. `grep pattern /file` - to fine the text pattern
+10. `chmod 777 file-name` - chnage the file permission
+11. `grep pattern /file` - to find the text pattern
     
 ## Networking troubleshooting
 1. `ifconfig` - Display all network interfaces with IP addresses.
