@@ -66,12 +66,19 @@ Swap:             0B          0B          0B
    **Observation** : Site is up and running.
 
 ## Logs
-
-   **Command** : `journalctl -u ssh -n 20`  
-   **Output** :  
+1. **Command** : `journalctl -u ssh -n 20`  
+   **Output** :
+   
    ![ssh](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-05/SSH.jpg)
 
    **Observation** :  Recent login attempts record. No suspicious activity detected.
+
+## If this worsens (next steps)
+
+1. Will check the disk utilization.
+2. find the proccess with hight cpu utilization
+3. kill the high cpu utilization proccess
+4. if ssh failed to connect will check port 22 listenong
 
 
 
