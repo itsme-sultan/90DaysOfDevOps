@@ -21,3 +21,45 @@
 - `/usr/bin` - Contains the majority of user command binaries — programs and utilities that regular users and administrators run in daily work. (ex. ls, mkdir, mv) I would use this to look for commands.
   
 - `/opt` - Optional third-party software that doesn't follow the standard packaging conventions.
+
+
+### Hands on Task :
+- Use the command `du -sh /var/log/* 2>/dev/null | sort -h | tail -5` to find 5 largest log file
+-  checkthe configuration file `/etc/hostname ` to get the hostname
+-  lsited all the file and directory in the home directory ` ls -la `
+
+  ![hosstname](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-07/1.jpg)
+
+# Part 2: Scenario-Based Practice
+
+## Scenario 1: Service Not Starting
+```
+A web application service called 'myapp' failed to start after a server reboot.
+What commands would you run to diagnose the issue?
+Write at least 4 commands in order.
+```
+### My Solution (Step by step):
+- step 1: check service status
+ 
+  `syatemctl status myapp`
+  
+  Why this command? It shows if the service is active, failed, or stopped
+
+- step 2 : Check the log
+
+  `Journalctl -u myapp`
+
+  why this command? To know the last few state of the service.
+
+- step 3: check if service is enqabled
+
+  `systemctl is-enabled myapp`
+
+  Why this command? To know if it will start automatically after reboot
+  What I learned: Always check status first, then investigate based on what you see.
+
+
+
+A web application service called 'myapp' failed to start after a server reboot.
+What commands would you run to diagnose the issue?
+Write at least 4 commands in order.
