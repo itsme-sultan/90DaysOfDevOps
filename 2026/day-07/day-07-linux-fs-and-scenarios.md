@@ -30,6 +30,8 @@
 
   ![hosstname](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-07/1.jpg)
 
+---------------------------
+
 # Part 2: Scenario-Based Practice
 
 ## Scenario 1: Service Not Starting
@@ -47,7 +49,7 @@ Write at least 4 commands in order.
 
 - step 2 : Check the log
 
-  `Journalctl -u myapp`
+  `Journalctl -u myapp` 
 
   why this command? To know the last few state of the service.
 
@@ -55,11 +57,87 @@ Write at least 4 commands in order.
 
   `systemctl is-enabled myapp`
 
-  Why this command? To know if it will start automatically after reboot
+  Why this command? To know if it will start automatically after reboot  
   What I learned: Always check status first, then investigate based on what you see.
 
+--------------
 
+## Scenario 2: High CPU Usage
+```
+Your manager reports that the application server is slow.
+You SSH into the server. What commands would you run to identify
+which process is using high CPU?
+```
 
-A web application service called 'myapp' failed to start after a server reboot.
-What commands would you run to diagnose the issue?
-Write at least 4 commands in order.
+### My Solution :
+- Step 1: check the live proccess
+  
+  `htop`
+
+  Why this command? to know all the running proccess.
+
+- Step 2: Sort the proccess by cpu utilization
+
+  ` ps aux --sort=-%cpu | head -20 `
+
+  Why this command? THis will sort the proccess in descending order of cpu utilization.  
+  What I learned? sort the proccess by high cpu utilization and note the PID.
+
+---------------
+
+## Scenario 3: Finding Service Logs
+```
+A developer asks: "Where are the logs for the 'docker' service?"
+The service is managed by systemd.
+What commands would you use?
+```
+
+### My Solution :
+- Step 1: CHeck the docker services logs.
+  
+  ` journalctl -u docker | tail -n 50 `
+
+  Why this command? To knoe service logs
+
+- Step 2: Check the live service logs.
+
+  ` journalctl -u docker -f | tail -50 `
+
+  Why this command? Check the service log in realtime
+
+  -----
+
+  ## Scenario 4: File Permissions Issue
+  ```
+  A script at /home/user/backup.sh is not executing.
+  When you run it: ./backup.sh
+  You get: "Permission denied"
+
+  What commands would you use to fix this?
+  ```
+
+  ### My Solution :
+  
+- Step 1: Check the file permission
+
+  ` ls -ltr /home/user/backup.sh `
+
+  Why this command? Tp know if file have execute permission or not.
+
+- Step 2: Chnage the file permission
+
+  ` sudo chmod +x /home/user/backup.sh `
+
+  Why this command? Give file execute permission
+
+- Step 3: Run the script
+
+  `./backup.sh or bash backup.sh `
+
+  Why this commsnd? To check file exxecuted successfully or not.  
+  What I learned? ALways check file permission before rubbibg script.
+  
+  
+  
+  
+
