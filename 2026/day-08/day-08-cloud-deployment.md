@@ -8,6 +8,8 @@ Step 2: Connect via SSH
 - Access the AWS EC2 instance from local system using Git bash terminal  
   `ssh -i "private-key.pem" username@public-ip/hostname`
 
+![Ec2-instance](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-08/Ec2-instance.jpg)
+
 -----
 
 ## Part 2: Install Docker & Nginx  
@@ -34,6 +36,10 @@ systemctl enable docker
 - Setup the security group fot http traffic (Port 80)  
 - Test Web Access: Open browser and visit: http://<instance-ip>
 
+![web-page](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-08/Nginx-webpage.jpg)
+
+------------
+
 ## Part 4: Extract Nginx Logs  
 Step 1: View Nginx Logs
 `journalctl -u nginx`
@@ -43,6 +49,8 @@ Step 2: Save Logs to File
 
 Step 3: Download Log File to Your Local Machine  
 `scp -i "Mylinux-server.pem" ubuntu@13.232.139.224:/home/ubuntu/nginx-logs.txt ./nginx-logs.txt`
+
+![nginx-log](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-08/nginx-log.jpg)
 
 --------------
 
