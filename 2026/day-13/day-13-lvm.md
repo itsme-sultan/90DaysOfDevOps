@@ -9,7 +9,7 @@ Run: `lsblk`, `pvs`, `vgs`, `lvs`, `df -h`
 - All three volume's are not mounted anywhere.
 - No PV, GV & LV are avilable.
 
-  ![Task1]()
+  ![Task1](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-13/Images/Task1.jpg)
 
 ### Task 2: Create Physical Volume
 ```bash
@@ -18,7 +18,7 @@ pvs
 ```
 **Observation** : Two physical Volume of size 6G & 8G is created.
 
-![Task2]()
+![Task2](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-13/Images/Task2.jpg)
 
 
 
@@ -30,7 +30,7 @@ vgs
 
 **Observation** : Volume group of size 14G is created from two physical volume.
 
-![Task3]()
+![Task3](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-13/Images/Task3.png)
 
 ### Task 4: Create Logical Volume
 ```bash
@@ -39,7 +39,7 @@ lvs
 ```
 **Observation** : Logical Volume of 10G is created.
 
-![Task4]()
+![Task4](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-13/Images/task4.png)
 
 ### Task 5: Format and Mount
 ```bash
@@ -52,7 +52,7 @@ df -h /mnt/app-data
 - ext4 file system created.
 - mounted the logical volume.
 
-![Task5]()
+![Task5](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-13/Images/Task5.jpg)
 
 ### Task 6: Extend the Volume
 ```bash
@@ -61,5 +61,5 @@ resize2fs /dev/devops-vg/app-data
 df -h /mnt/app-data
 ```
 
-![Task6]()
+![Task6](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-13/Images/Task6.jpg)
 
