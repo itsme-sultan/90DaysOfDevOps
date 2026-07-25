@@ -33,37 +33,37 @@
 - Identity: hostname -I (or ip addr show)  
   Observation : Local Ip address of EC2 instance is 172.31.47.23.
   
-  ![ip-addr]()
+  ![ip-addr](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-14/Images/ip-addr.jpg)
   
 - Reachability: ping <google.com>  
   Observation : No packet loss, Average latency is 2.3 ms shows low latency.
 
-  ![ping]()
+  ![ping](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-14/Images/Ping.jpg)
   
 - Path: traceroute <google.com>  
   Observation : Reach the destination successfully with 17 hops. No repsonse for hp 10-16 due to security.
 
-  ![Traceroute]()
+  ![Traceroute](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-14/Images/traceroutr.jpg)
   
 - Ports: ss -tulpn (or netstat -tulpn) — list one listening service and its port.  
   Observation : Port 20 & 80 is listening. means ready to accesspt SSH & hhtp connection.
 
-  ![netsta]()
+  ![netsta](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-14/Images/netstat.jpg)
   
 - Name resolution: dig <google.com> or nslookup <domain>  
   Observation : Google have 6 ipv4 ip address.
 
-  ![dig]()
+  ![dig](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-14/Images/dig.jpg)
   
-- HTTP check: curl -I <http/https-url>  
+- HTTP check: curl -I google.com
   Obervation : HTTP Status code is 301 Moved Permanently. Always redirect to http://www.google.com/
 
-  ![curl]()
+  ![curl](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-14/Images/curl.jpg)
 
 - Connections snapshot: netstat -an | head  
   Observation: Two established connection on port 22 and many ports arev  listening.
 
-  ![netstat-az]()
+  ![netstat-an](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-14/Images/netstat-az.jpg)
 
   -------------------
 
@@ -73,7 +73,7 @@
 - From the same machine, test it: nc -zv localhost <port> (or curl -I http://localhost:<port>).
   Observation: Localhost successfly connected to port 22.
 
-  ![localhost]()
+  ![localhost](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-14/Images/netcat.jpg)
   
 - If service is not reachable, check the service status `systemctl status ssh` or firewall rules.
 
