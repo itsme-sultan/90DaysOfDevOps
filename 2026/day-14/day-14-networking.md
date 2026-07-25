@@ -30,19 +30,93 @@
 
 ## Hands-on Checklist
 
-- Identity: hostname -I (or ip addr show)
+- Identity: hostname -I (or ip addr show)  
   Observation : Local Ip address of EC2 instance is 172.31.47.23.
+  
   ![ip-addr]()
   
-- Reachability: ping <google.com>
+- Reachability: ping <google.com>  
   Observation : No packet loss, Average latency is 2.3 ms shows low latency.
 
   ![ping]()
   
-- Path: traceroute <target> (or tracepath) — note any long hops/timeouts.
-  Observation :
+- Path: traceroute <google.com>  
+  Observation : Reach the destination successfully with 17 hops. No repsonse for hp 10-16 due to security.
+
+  ![Traceroute]()
   
-Ports: ss -tulpn (or netstat -tulpn) — list one listening service and its port.
-Name resolution: dig <domain> or nslookup <domain> — record the resolved IP.
-HTTP check: curl -I <http/https-url> — note the HTTP status code.
-Connections snapshot: netstat -an | head — count ESTABLISHED vs LISTEN (rough).
+- Ports: ss -tulpn (or netstat -tulpn) — list one listening service and its port.  
+  Observation : Port 20 & 80 is listening. means ready to accesspt SSH & hhtp connection.
+
+  ![netsta]()
+  
+- Name resolution: dig <google.com> or nslookup <domain>  
+  Observation : Google have 6 ipv4 ip address.
+
+  ![dig]()
+  
+- HTTP check: curl -I <http/https-url>  
+  Obervation : HTTP Status code is 301 Moved Permanently. Always redirect to http://www.google.com/
+
+  ![curl]()
+
+- Connections snapshot: netstat -an | head  
+  Observation: Two established connection on port 22 and many ports arev  listening.
+
+  ![netstat-az]()
+
+  -------------------
+
+## Mini Task: Port Probe & Interpret
+
+- Identify one listening port from `ss -tulpn`.
+- From the same machine, test it: nc -zv localhost <port> (or curl -I http://localhost:<port>).
+  Observation: Localhost successfly connected to port 22.
+
+  ![localhost]()
+  
+- If service is not reachable, check the service status `systemctl status ssh` or firewall rules.
+
+- -----------------
+## Reflection
+- Which command gives you the fastest signal when something is broken? -  `ping `
+- What layer (OSI/TCP-IP) would you inspect next,
+- if DNS fails?
+  - OSI : Application Layer
+  - TCP\IP : Application layer
+  - Reason:
+    1. DNS is application layer protocol
+    2. Issue is with DNS Resolver.
+  
+- If HTTP 500 shows up?
+  - OSI : Application layer
+  - TCP\IP : Application Layer.
+    Reason:
+    1. Request reacched the server, connection stablished.
+    2. Issue is with server side.
+       
+- Two follow-up checks you’d run in a real incident.
+- IF DNS fails?
+  ``` bash
+  ping <ip>
+  dig <dns>
+  ```
+
+- If HTTP 500 shows up?
+  ``` bash
+  traceroute <dns>
+  cutl -I <dns>
+  ```
+  
+
+
+
+
+
+
+
+
+
+
+
+
