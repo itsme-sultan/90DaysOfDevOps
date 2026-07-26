@@ -23,37 +23,42 @@
   4. MX Record : Mail server hostname (+priority). Where to send mail of the domain.
   5. NS record : Authoritative DNS server hostname. Who manages this domain's DNS
 
-- Run: dig google.com — identify the A record and TTL (Time to leave)  from the output.
-  TTL = 164 Seconds  
-  ![TTL]()
+- Run: dig google.com — identify the A record and TTL (Time to leave)  from the output.  
+  TTL = 164 Seconds
+  
+  ![TTL](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-15/Images/Dig-%20A.jpg)
 
   --------
 
 ## Task 2: IP Addressing
 
-- What is an IPv4 address? How is it structured? (e.g., 192.168.1.10)
+- What is an IPv4 address? How is it structured? (e.g., 192.168.1.10)  
   IPV4 is identity of network device or host in a network.  
-  An IPv4 address has 4 numbers (octets) separated by dots. Each octet is 8 bits, ranging from 0 to 255.
+  An IPv4 address has 4 numbers (octets) separated by dots. Each octet is 8 bits, ranging from 0 to 255.  
   Total = 32 bits = 4 × 8 bits.
 
   ```bash
   192.168.1.10  →  11000000.10101000.00000001.00001010
   ```
   
-- Difference between public and private IPs — give one example of each.  
-  ✅  IP address of device in local network is private ip address and not used for the routing purpose.  
-      Private IP ranges are reserved:  
-      1. 10.0.0.0 – 10.255.255.255
-      2. 172.16.0.0 – 172.31.255.255
-      3. 192.168.0.0 – 192.168.255.255  
+- Difference between public and private IPs — give one example of each.
   
-  ✅  Public IPs  
-      Everything else is potentially a public IP, routable directly on the internet (e.g., your server's public IP, a website's IP).  
+**Public IP**                                           |   **Private IP**
+--------------------------------------------------------|--------------------------------------------------------------------
+It is assigned by ISP to every device on the internet.  |   Assigned within private networks to identify devices  locally. 
+It is unique across the entire internet.                |   Not routable on the internet.
+Example: `103.176.157.29`, `8.8.8.8 (Google DNS)`       |   Example: `192.168.x.x`, `10.x.x.x`,`172.16.x.x`
+
+
+- What are the private IP ranges?
+   - `10.x.x.x` - Large enterprise networks  
+   - `172.16.x.x – 172.31.x.x` - Medium-sized organizations  
+   - `192.168.x.x` - Home & small office network  
      
 - Run: ip addr show — identify which of your IPs are private
   Private ip of my linux system : 10.0.2.15
 
-  ![ip-addr]()
+  ![ip-addr](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-15/Images/ip-addr.jpg)
 
   ---------------
 
@@ -107,7 +112,7 @@
    Port 22 is listening → Service : SSH
    Port 53 is listening → Service : DNS
 
-   ![Port]()
+   ![Port](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-15/Images/SS-tulnp.jpg)
 
 -------------
 
