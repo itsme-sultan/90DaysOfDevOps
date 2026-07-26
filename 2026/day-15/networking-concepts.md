@@ -24,7 +24,7 @@
   5. NS record : Authoritative DNS server hostname. Who manages this domain's DNS
 
 - Run: dig google.com — identify the A record and TTL (Time to leave)  from the output.
-  TTL = 164 Seconds
+  TTL = 164 Seconds  
   ![TTL]()
 
   --------
