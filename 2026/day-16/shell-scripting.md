@@ -45,6 +45,7 @@ chmod +x hello.sh
 
 ----------
 
+
 ## Task 4: If-Else Conditions
 1. Create `check_number.sh` that:
    - Takes a number using `read`
@@ -56,14 +57,17 @@ chmod +x hello.sh
    - Asks for a filename
    - Checks if the file **exists** using `-f`
    - Prints appropriate message
+   - 
      ![file-check]()
 
   ----------- 
   
-## Task 5: Combine It All
+## Task 5: Combine It All  
 Create `server_check.sh` that:
 1. Stores a service name in a variable (e.g., `nginx`, `sshd`)
 2. Asks the user: "Do you want to check the status? (y/n)"
 3. If `y` — runs `systemctl status <service>` and prints whether it's **active** or **not**
 4. If `n` — prints "Skipped."
+
+   ![server-check]()
   
