@@ -15,7 +15,7 @@ chmod +x hello.sh
 - I remove the shabang from the screip and run it directly `./hello.sh` and cript executed successfully.  
   Since bash is the default interpreter. I checked it using command `$0`
 
-  ![task1]()
+  ![task1](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-16/Images/Task1.jpg)
 
   ------------
 
@@ -32,6 +32,8 @@ chmod +x hello.sh
    Where it does become an issue:
    1. If the value contains a single quote — e.g.: NAME='O'Brien'
    2. If the value itself needs expansion — e.g. you wanted to embed another variable inside:  NAME='Mr. $LASTNAME'
+
+      ![variable](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-16/Images/variable.sh.jpg)
   
   ----------
 
@@ -41,7 +43,7 @@ chmod +x hello.sh
    - Asks for their favourite tool
    - Prints: `Hello <name>, your favourite tool is <tool>`
 
-     ![greet.sh]()
+     ![greet.sh](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-16/Images/greet.sh.jpg)
 
 ----------
 
@@ -51,14 +53,14 @@ chmod +x hello.sh
    - Takes a number using `read`
    - Prints whether it is **positive**, **negative**, or **zero**
 
-     ![check-number.sh]()
+     ![check-number.sh](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-16/Images/check-number.sh.jpg)
 
 2. Create `file_check.sh` that:
    - Asks for a filename
    - Checks if the file **exists** using `-f`
    - Prints appropriate message
    - 
-     ![file-check]()
+     ![file-check](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-16/Images/file_check.jpg)
 
   ----------- 
   
@@ -69,5 +71,5 @@ Create `server_check.sh` that:
 3. If `y` — runs `systemctl status <service>` and prints whether it's **active** or **not**
 4. If `n` — prints "Skipped."
 
-   ![server-check]()
+   ![server-check](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-16/Images/server_check.sh.jpg)
   
