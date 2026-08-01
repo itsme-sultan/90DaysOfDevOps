@@ -6,8 +6,9 @@
 2. Create `count.sh` that:
    - Prints numbers 1 to 10 using a for loop
 
-[Click here to open for_loop.sh]()
+[Click here to open for_loop.sh](script/for_loop.sh)
 
+![for-loop](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-17/Images/for_loop.jpg)
 -----------
 
 ## Task 2: While Loop
@@ -16,9 +17,11 @@
    - Counts down to 0 using a while loop
    - Prints "Done!" at the end
   
-[Click here to open countdown.sh]()
+[Click here to open countdown.sh](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-17/script/countdown.sh)
 
-----------------
+![countdown](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-17/Images/countdown.sh.jpg)
+
+------------
 
 ## Task 3: Command-Line Arguments
 1. Create `greet.sh` that:
@@ -26,14 +29,18 @@
    - Prints `Hello, <name>!`
    - If no argument is passed, prints "Usage: ./greet.sh <name>"
 
-[Click here to Open greet.sh]()
+[Click here to Open greet.sh](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-17/script/greet.sh)
+
+![greet.sh](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-17/Images/greet.sh.jpg)
 
 2. Create `args_demo.sh` that:
    - Prints total number of arguments (`$#`)
    - Prints all arguments (`$@`)
    - Prints the script name (`$0`)
 
-[Click here to open args_demo.sh]()
+[Click here to open args_demo.sh](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-17/script/args_demo.sh)
+
+![args-demo](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-17/Images/aregs_demo.jpg)
 
 -------
 
@@ -47,7 +54,9 @@
 
 > Run as root: `sudo -i` or `sudo su`
 
-[Click here to open install_packages.sh]()
+[Click here to open install_packages.sh](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-17/script/install_packages.sh)
+
+![install-packages](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-17/Images/Install_package.jpg)
 
 ---
 
@@ -64,9 +73,11 @@ Example:
 mkdir /tmp/devops-test || echo "Directory already exists"
 ```
 
-[Click here to open safe_script.sh]()
+[Click here to open safe_script.sh](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-17/script/safe_script.sh)
 
 2. Modify your `install_packages.sh` to check if the script is being run as root — exit with a message if not.
 
-   [Click here to open modified_install_packages.sh]()
+[Click here to open modified_install_packages.sh](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-17/script/modified_install_packages.sh)
+
+![modified-package](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-17/Images/modified_packages.jpg)
 
