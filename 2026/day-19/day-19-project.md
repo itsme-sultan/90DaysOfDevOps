@@ -47,9 +47,9 @@ Create `backup.sh` that:
    - Run `backup.sh` every Sunday at 3 AM
    - Run a health check script every 5 minute
      
-every day at 2 AM -  0 2 * * 0-6
-Sunday at 3 AM - 0 3 * * 0
-Run a health check script every 5 minute - */5 * * * *
+every day at 2 AM -  0 2 * * 0-6  
+Sunday at 3 AM - 0 3 * * 0  
+Run a health check script every 5 minute - */5 * * * *  
 
 ---
 
