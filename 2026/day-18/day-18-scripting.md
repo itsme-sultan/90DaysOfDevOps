@@ -6,8 +6,9 @@
    - A function `add` that takes two numbers and prints their sum
    - Call both functions from the script
   
-[Click here for the script}()
-![functios]()
+[Click here for the script](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-18/script/functions.sh)  
+
+![functios](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-18/images/functions.jpg)
 ---
 
 ## Task 2: Functions with Return Values
@@ -16,8 +17,9 @@
    - A function `check_memory` that checks free memory using `free -h`
    - A main section that calls both and prints the results
 
-[Click here for the script}()
-![disk_check]()
+[Click here for the script](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-18/script/disk_check.sh)  
+
+![disk_check](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-18/images/disk_check.jpg)
 ---
 
 ## Task 3: Strict Mode — `set -euo pipefail`
@@ -32,8 +34,9 @@
 - `set -o pipefail` → Ensures that in a pipeline (cmd1 | cmd2 | cmd3), the whole pipeline fails if any command fails.  
                        Without this, only the last command’s exit status is checked.
 
-[Click here for the script}()
-![strict_demo]()
+[Click here for the script](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-18/script/strict_demo.sh)  
+
+![local_demo](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-18/images/strict_demo.jpg)
 
 ---
 
@@ -42,9 +45,11 @@
    - A function that uses `local` keyword for variables
    - Show that `local` variables don't leak outside the function
    - Compare with a function that uses regular variables
-  
-[Click here for the script}()
-![local_demo]()
+
+[Click here for the script](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-18/script/local_demo.sh)  
+
+![local_varo](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-18/images/local-demo.jpg)
+
 
 ---
 
@@ -60,7 +65,8 @@ Create `system_info.sh` that uses functions for everything:
 
 Output should look clean and readable.
 
-[Click here for the script}()
-![system-info]()
+[Click here for the script](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-18/script/system_info.sh)  
+
+![system-info](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-18/images/system_info.jpg)
 ---
 
