@@ -10,6 +10,8 @@ Create `log_rotate.sh` that:
 
 [click here for script](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-19/script/log_rotate.sh)
 
+![log_script](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-19/Image/log_rotate.jpg)
+
 ---
 
 ### Task 2: Server Backup Script
@@ -23,6 +25,9 @@ Create `backup.sh` that:
 
 
 [click here for script](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-19/script/backup.sh)
+
+![log_script](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-19/Image/backup.jpg)
+
 ---
 
 ### Task 3: Crontab
@@ -40,7 +45,11 @@ Create `backup.sh` that:
 3. Write cron entries (in your markdown, don't apply if unsure) for:
    - Run `log_rotate.sh` every day at 2 AM
    - Run `backup.sh` every Sunday at 3 AM
-   - Run a health check script every 5 minutes
+   - Run a health check script every 5 minute
+     
+every day at 2 AM -  0 2 * * 0-6  
+Sunday at 3 AM - 0 3 * * 0  
+Run a health check script every 5 minute - */5 * * * *  
 
 ---
 
@@ -49,8 +58,10 @@ Create `maintenance.sh` that:
 1. Calls your log rotation function
 2. Calls your backup function
 3. Logs all output to `/var/log/maintenance.log` with timestamps
-4. Write the cron entry to run it daily at 1 AM
+4. Write the cron entry to run it daily at 1 AM  - 0 1 * * 0-6
 
 [click here for script](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-19/script/maintenance.sh)
+
+![log_script](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-19/Image/Maintenance.jpg)
 
 ---
