@@ -1,4 +1,4 @@
-# Day 21 – Shell Scripting Cheat Sheet: Build Your Own Reference Guide
+# Day 21 – Shell Scripting Cheat Sheet
 
 ## Task
 
