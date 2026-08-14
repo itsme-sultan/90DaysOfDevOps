@@ -60,11 +60,11 @@ In your `devops-git-practice` repo, perform the following:
 3. Push your `main` branch to GitHub
 4. Push `feature-1` branch to GitHub
 
-[task-3]()
+![task-3]()
 
 6. Verify both branches are visible on GitHub
 
-[Github]()
+![Github]()
 
 8. Answer in your notes: What is the difference between `origin` and `upstream`?
    - Origin : Default name for the remote repository you cloned from
@@ -83,8 +83,14 @@ In your `devops-git-practice` repo, perform the following:
 
 ### Task 4: Pull from GitHub
 1. Make a change to a file **directly on GitHub** (use the GitHub editor)
-2. Pull that change to your local repo
-3. Answer in your notes: What is the difference between `git fetch` and `git pull`?
+
+!{task4]()
+
+3. Pull that change to your local repo
+
+![task4.2]()
+
+5. Answer in your notes: What is the difference between `git fetch` and `git pull`?
    - `git fetch` : Downloads changes from remote only; does not change your branch,just updates remote info.
    - `git pull` : Downloads changes from remote and merges them into your current branch, updating your local branch immediately.
 
@@ -92,10 +98,41 @@ In your `devops-git-practice` repo, perform the following:
 
 ### Task 5: Clone vs Fork
 1. **Clone** any public repository from GitHub to your local machine
-2. **Fork** the same repository on GitHub, then clone your fork
-3. Answer in your notes:
+
+[task5.1]()
+
+3. **Fork** the same repository on GitHub, then clone your fork
+
+[task5.2]()
+
+5. Answer in your notes:
    - What is the difference between clone and fork?
+     
+     * Clone : Clone is a Git command that copies a repository from a remote location (like GitHub) to your local machine.
+     * Fork :  Fork is a GitHub/GitLab/Bitbucket platform feature (not a Git command). It creates your own copy of someone else's repository on the platform, under your account
+       
    - When would you clone vs fork?
+     When Clone:
+     - You have write access to the repo (e.g., it's your own project or you're on the team).
+     - You just need a local working copy — no intention of contributing back independently.
+     - Example: cloning your company's private repo you're already a collaborator on.
+
+      When Fork:
+      - You don't have write access to the original repo (common with open source projects).
+      - You want to make changes and eventually propose them back via a pull request, without affecting the original.
+      - You want to experiment freely on your own copy without risk to the upstream project.
+      - Example: contributing a bug fix to a popular open-source library — fork it, clone your fork, make changes, push to your fork, then open a PR to the original.
+        
    - After forking, how do you keep your fork in sync with the original repo?
+     * After forking and cloning my fork, I add the original repository as an upstream remote. Then I fetch changes from upstream, merge the upstream default branch into my current branch, and push the updates to my fork.
+       ```bash
+       git remote add upstream git@github.com:aws-containers/retail-store-sample-app.git      #Add the original repo as a remote
+       git checkout main                     #checkout to main branch
+       git fetch upstream                    #Fetch the latest changes from upstream
+       git merge upstream/main               #Merge upstream changes into your local main
+       git push origin main                  #Push the updated main branch to your fork on GitHub
+
+       Note: Use rebase instead of merge if you prefer a linear history
+     ```
 
 ---
