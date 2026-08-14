@@ -21,14 +21,36 @@
 ### Task 2: Branching Commands — Hands-On
 In your `devops-git-practice` repo, perform the following:
 1. List all branches in your repo
-2. Create a new branch called `feature-1`
-3. Switch to `feature-1`
-4. Create a new branch and switch to it in a single command — call it `feature-2`
-5. Try using `git switch` to move between branches — how is it different from `git checkout`?
-6. Make a commit on `feature-1` that does **not** exist on `main`
-7. Switch back to `main` — verify that the commit from `feature-1` is not there
-8. Delete a branch you no longer need
-9. Add all branching commands to your `git-commands.md`
+   ```bash
+   git branch
+   ```
+3. Create a new branch called `feature-1`
+   ```bash
+   git branch feature-1
+   ```
+5. Switch to `feature-1`
+   ```bash
+   git checkout feature
+   ```
+7. Create a new branch and switch to it in a single command — call it `feaRestore files to a previous committure-2`.
+   ```bash
+   git checkout -b feature-2
+   ```
+9. Try using `git switch` to move between branches — how is it different from `git checkout`?
+    
+    - git switch :Newer, simpler command. Designed only for branch operations.
+    - git checkout :Older, multi‑purpose command. Can do several things:
+      * Switch branches - `git checkout <branch>`
+      * Restore files to a previous commit - `git checkout HEAD~1 file.txt `
+        
+11. Make a commit on `feature-1` that does **not** exist on `main`
+12. Switch back to `main` — verify that the commit from `feature-1` is not there
+13. Delete a branch you no longer need
+    ```bash
+    git branch -d feature-2
+    ```
+    
+15. Add all branching commands to your `git-commands.md`
 
 ---
 
@@ -37,15 +59,34 @@ In your `devops-git-practice` repo, perform the following:
 2. Connect your local `devops-git-practice` repo to the GitHub remote
 3. Push your `main` branch to GitHub
 4. Push `feature-1` branch to GitHub
-5. Verify both branches are visible on GitHub
-6. Answer in your notes: What is the difference between `origin` and `upstream`?
 
+[task-3]()
+
+6. Verify both branches are visible on GitHub
+
+[Github]()
+
+8. Answer in your notes: What is the difference between `origin` and `upstream`?
+   - Origin : Default name for the remote repository you cloned from
+     * Example : git clone https://github.com/itsme-sultan/devops-git-practice.git
+     * Git automatically names that remote origin. your personal copy of the repo (your fork or clone).
+       
+   - Upstream : The original repo you forked from is added manually as upstream
+     * upstream = the source repo you forked from (the “parent project”).
+     * Example : https://github.com/TrainWithShubham/90DaysOfDevOps.git
+     * This lets you pull updates from the original project:
+       ```bash
+       git fetch upstream
+       git merge upstream/master
+       ```
 ---
 
 ### Task 4: Pull from GitHub
 1. Make a change to a file **directly on GitHub** (use the GitHub editor)
 2. Pull that change to your local repo
 3. Answer in your notes: What is the difference between `git fetch` and `git pull`?
+   - `git fetch` : Downloads changes from remote only; does not change your branch,just updates remote info.
+   - `git pull` : Downloads changes from remote and merges them into your current branch, updating your local branch immediately.
 
 ---
 
