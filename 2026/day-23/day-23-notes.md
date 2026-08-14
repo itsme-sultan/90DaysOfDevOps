@@ -30,12 +30,14 @@ In your `devops-git-practice` repo, perform the following:
    ```
 5. Switch to `feature-1`
    ```bash
-   git checkout feature
+   git checkout feature-1
    ```
 7. Create a new branch and switch to it in a single command — call it `feaRestore files to a previous committure-2`.
    ```bash
    git checkout -b feature-2
    ```
+![delete](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-23/Images/task2-delete.jpg)
+
 9. Try using `git switch` to move between branches — how is it different from `git checkout`?
     
     - git switch :Newer, simpler command. Designed only for branch operations.
@@ -52,6 +54,8 @@ In your `devops-git-practice` repo, perform the following:
     
 15. Add all branching commands to your `git-commands.md`
 
+![task2](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-23/Images/task2.jpg)
+
 ---
 
 ### Task 3: Push to GitHub
@@ -60,11 +64,11 @@ In your `devops-git-practice` repo, perform the following:
 3. Push your `main` branch to GitHub
 4. Push `feature-1` branch to GitHub
 
-![task-3]()
+![task-3](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-23/Images/Task-3.png)
 
 6. Verify both branches are visible on GitHub
 
-![Github]()
+![Github](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-23/Images/task-3-github.jpg)
 
 8. Answer in your notes: What is the difference between `origin` and `upstream`?
    - Origin : Default name for the remote repository you cloned from
@@ -84,7 +88,7 @@ In your `devops-git-practice` repo, perform the following:
 ### Task 4: Pull from GitHub
 1. Make a change to a file **directly on GitHub** (use the GitHub editor)
 
-!{task4]()
+![task4](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-23/Images/Task-4.jpg)
 
 3. Pull that change to your local repo
 
@@ -99,11 +103,11 @@ In your `devops-git-practice` repo, perform the following:
 ### Task 5: Clone vs Fork
 1. **Clone** any public repository from GitHub to your local machine
 
-[task5.1]()
+![task5.1](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-23/Images/Task5.1.jpg)
 
 3. **Fork** the same repository on GitHub, then clone your fork
 
-[task5.2]()
+![task5.2](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-23/Images/task5.2.jpg)
 
 5. Answer in your notes:
    - What is the difference between clone and fork?
@@ -126,13 +130,13 @@ In your `devops-git-practice` repo, perform the following:
    - After forking, how do you keep your fork in sync with the original repo?
      * After forking and cloning my fork, I add the original repository as an upstream remote. Then I fetch changes from upstream, merge the upstream default branch into my current branch, and push the updates to my fork.
        ```bash
-       git remote add upstream git@github.com:aws-containers/retail-store-sample-app.git      #Add the original repo as a remote
+       git remote add upstream git@github.com:aws-containers/retail-store-sample-app.git  #Add the original repo as a remote
        git checkout main                     #checkout to main branch
        git fetch upstream                    #Fetch the latest changes from upstream
        git merge upstream/main               #Merge upstream changes into your local main
        git push origin main                  #Push the updated main branch to your fork on GitHub
 
        Note: Use rebase instead of merge if you prefer a linear history
-     ```
+       ```
 
 ---
