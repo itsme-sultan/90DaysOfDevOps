@@ -25,8 +25,8 @@
 3. git switch feature           #switch to feature branch
 4. git branch feature           #create a new branch(feature)
 5. git checkout -b feature      #create and switch to new branch
-6. git checkout -d feature      #delete feature branch
-7. git checkout -D              #forcefully delete branch
+6. git branch -d feature        #delete feature branch
+7. git branch -D                #forcefully delete branch
 8. git branch -M dev            #rename current branch
 
 **Remote command**
