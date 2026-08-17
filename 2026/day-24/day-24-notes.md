@@ -45,28 +45,69 @@
 ---
 
 ### Task 2: Git Rebase — Hands-On
-1. Create a branch `feature-dashboard` from `main`, add 2-3 commits
+1. Create a branch `feature-dashboard` from `main`, add 2-3 commit
+
+![Task.2-1]()
+
 2. While on `main`, add a new commit (so `main` moves ahead)
+
+![task.2-2]()
+
 3. Switch to `feature-dashboard` and rebase it onto `main`
+
+![task.2-rebase]()
+
 4. Observe your `git log --oneline --graph --all` — how does the history look compared to a merge?
+
+![task.2-log]()
+
 5. Answer in your notes:
    - What does rebase actually do to your commits?
+     * Rebase rewrite the commit history of current branch, move current branch commits to the tip of another brnach.
+     * Move the commit history of feature-dashboard on the tip of main branch one by one.
+       
    - How is the history different from a merge?
+     * `merge` preserves history exactly as it happened. creates a merge commit.
+     * `rebase` rewrites history. moves your commits on top of feature-dashboard branch,creates a linear,clean history.no merge commit.
+       
    - Why should you **never rebase commits that have been pushed and shared** with others?
+     * Rebasing rewrites commit history — it creates brand new commits with different SHA hashes. This causes real problems once others have pulled the original commits.
+       
    - When would you use rebase vs merge?
+     * Use rebase when you are working on your local branch and want a linear, clean history.
+     * Use merge when you are working on shared branch and want to preserve the commit history.
 
 ---
 
 ### Task 3: Squash Commit vs Merge Commit
 1. Create a branch `feature-profile`, add 4-5 small commits (typo fix, formatting, etc.)
+
+![Task.3-1]()
+
 2. Merge it into `main` using `--squash` — what happens?
+
+![task.3-squash]()
+
 3. Check `git log` — how many commits were added to `main`?
+
+![Task.3-log]()
+
 4. Now create another branch `feature-settings`, add a few commits
 5. Merge it into `main` **without** `--squash` (regular merge) — compare the history
+
+![task.3-merge]()
+
 6. Answer in your notes:
    - What does squash merging do?
+     * Combines all commits from a feature branch into one single commit on main.
+     * Does not preserve individual commit history.
+       
    - When would you use squash merge vs regular merge?
+     * squash merge: Feature branch has many commits.You want clean main branch history.
+     * regular merge: You want to preserve full commit history.
+     * 
    - What is the trade-off of squashing?
+     * The trade-off of squashing is that while it keeps the main branch history clean and linear,it removes the detailed commit history of the feature branch by combining everything into a single commit.
 
 ---
 
