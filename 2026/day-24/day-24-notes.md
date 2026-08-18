@@ -105,7 +105,7 @@
    - When would you use squash merge vs regular merge?
      * squash merge: Feature branch has many commits.You want clean main branch history.
      * regular merge: You want to preserve full commit history.
-     * 
+       
    - What is the trade-off of squashing?
      * The trade-off of squashing is that while it keeps the main branch history clean and linear,it removes the detailed commit history of the feature branch by combining everything into a single commit.
 
@@ -114,14 +114,26 @@
 ### Task 4: Git Stash — Hands-On
 1. Start making changes to a file but **do not commit**
 2. Now imagine you need to urgently switch to another branch — try switching. What happens?
+   * `If there is no conflict` :Git will let the checkout/switch happen, and your uncommitted changes carry over with you to the new branch. They stay in your        working directory as uncommitted modifications.
+   * `Conflict` : Git blocks the switch entirely. You can't proceed until you either commit, stash, or discard the changes.
+
+![task.4-2]()
+
 3. Use `git stash` to save your work-in-progress
 4. Switch to another branch, do some work, switch back
 5. Apply your stashed changes using `git stash pop`
 6. Try stashing multiple times and list all stashes
 7. Try applying a specific stash from the list
+
+![Task.4-6]()
+
 8. Answer in your notes:
    - What is the difference between `git stash pop` and `git stash apply`?
+     * `git stash pop` bring back the changes & remove them from the stash.
+     *  `git stash apply` bring back the stash changes but keep them in stash too.
+      
    - When would you use stash in a real-world workflow?
+     * If I’m working on a feature and need to urgently switch branches to fix a production bug,I would use git stash to temporarily save my unfinished changes        before switching.
 
 ---
 
@@ -132,11 +144,15 @@
 4. Verify with `git log` that only that one commit was applied
 5. Answer in your notes:
    - What does cherry-pick do?
+     * Cherry-pick merge a given commit changes only without merging whole feature branch.
+       
    - When would you use cherry-pick in a real project?
+     * You fixed a bug on feature branch, but you need that fix on main too without merging whole feature branch.
+       
    - What can go wrong with cherry-picking?
+     * merge conflicts if same file was modified.
+     * Commit history confusion because it creates new commit ids.
 
 ---
 
 
-Happy Learning!
-**TrainWithShubham**
