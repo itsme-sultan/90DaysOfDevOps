@@ -143,12 +143,47 @@ Create a comparison in your notes:
 3. **Trunk-Based Development** — everyone commits to main, short-lived branches
    - How it works :
      * All developers commit directly (or via very short-lived branches, often <1 day) to a single shared branch — the "trunk" `(main/trunk)` .
-     * 
+
+   - Diagram :
+
+     ```bash
+      [main] (The Trunk)
+      |
+      o (Start)
+      |
+      |\_ _ _ _ _ _ _ 
+      |             \
+      |              o (Dev A: Small Change)
+      |<_ _ _ _ _ _ /
+      |             /
+      o (Merge & Test)
+      |
+      |\_ _ _ _ _ _ _ 
+      |             \
+      |              o (Dev B: Small Change)
+      |<_ _ _ _ _ _ /
+      |             /
+      o (Merge & Test)
+      |
+      v
+     ```
+
+   - When/where it's used :
+     * High-velocity engineering orgs practicing CI/CD (e.g., Google, Meta, Netflix-style setups)
+
+   - Pros :
+     * Minimizes merge conflicts — integration happens constantly, in small pieces
+
+   - Cons :
+     * Requires mature CI, automated testing, and feature-flag discipline — risky without it
 
    
-6. Answer:
+4. Answer:
    - Which strategy would you use for a startup shipping fast?
+     * GitHub Flow or Trunk-Based Development
    - Which strategy would you use for a large team with scheduled releases?
+     * Gitflow
+       
    - Which one does your favorite open-source project use? (check any repo on GitHub)
 
 ---
