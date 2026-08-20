@@ -62,8 +62,8 @@
 ### Task 3: Reset vs Revert — Summary
 Create a comparison in your notes:
 
-| | `git reset` | `git revert` |
-|---|---|---|
+|       |    `git reset`    |    `git revert`    |
+|---|:---:|:---:|
 | What it does | undo the changes & move the branch pointer | undo the changes by adding new commit |
 | Removes commit from history? | Yes | No |
 | Safe for shared/pushed branches? | No  | Yes |
@@ -72,16 +72,81 @@ Create a comparison in your notes:
 ---
 
 ### Task 4: Branching Strategies
-Research the following branching strategies and document each in your notes with:
-- How it works (short description)
-- A simple diagram or flow (text-based is fine)
-- When/where it's used
-- Pros and cons
 
 1. **GitFlow** — develop, feature, release, hotfix branches
-2. **GitHub Flow** — simple, single main branch + feature branches
+   - How it works:
+     GitFlow uses a strict set of long-lived and short-lived branches with defined roles:
+
+      * `main` — always reflects production-ready code
+      * `develop` — integration branch for ongoing work
+      * `feature` — branched from develop, merged back into develop
+      * `release` — branched from develop when preparing a release; merged into both main and develop
+      * `hotfix` — branched from main to patch production urgently; merged into both main and develop
+
+   - Diagram :
+     ```bash
+   
+           main  o---------------------o---------o---------o
+                 \                   / \       /
+      release     \        o--------o   \     /  (hotfix)
+                   \       /              \   \
+      develop       o-----o------o---------o---o
+                     \     \      \
+      feature          o----o      o-- (feature/x)
+                       (feature/y)
+      ```
+
+   - When/where it's used :
+     * Projects with scheduled releases (versioned software, desktop apps, embedded systems)
+     * Teams that need to support multiple production versions simultaneously
+    
+   - Pros:
+     * Clear separation of concerns (in-progress work vs. release-ready vs. production)
+     * Good for managing multiple release versions in parallel
+
+   - Cons :
+     * Heavyweight: many long-lived branches increase merge complexity and conflicts
+     * Slows down continuous delivery — not ideal for frequent deploys
+       
+
+2. **GitHub Flow** - simple, single main branch + feature branches
+   - How it works:
+     A lightweight model with a single long-lived branch, main, which is always deployable:
+     
+     * Create a `feature` branch off `main`
+     * Commit work, push, open a pull request
+     * Discuss/review, run CI
+     * Merge into main
+     * Deploy immediately (often automatically)
+
+   - Diagram :
+
+     ```bash
+     main o---------o-------------o-----o
+           \        ^  \          ^
+            \        merge         merge
+             o--o--o /       o--o-o
+             feature/login    feature/signup
+     ```
+
+   - When/where it's used
+     * Teams practicing CI/CD with frequent, small releases
+     * GitHub's own workflow model (hence the name); common in open-source projects
+    
+   - Pros:
+     * Simple and easy to understand — minimal branch types
+     * Fast feedback loop; pairs naturally with CI/CD pipelines
+    
+   - Cons:
+     * No dedicated structure for managing multiple release versions at once
+
 3. **Trunk-Based Development** — everyone commits to main, short-lived branches
-4. Answer:
+   - How it works :
+     * All developers commit directly (or via very short-lived branches, often <1 day) to a single shared branch — the "trunk" `(main/trunk)` .
+     * 
+
+   
+6. Answer:
    - Which strategy would you use for a startup shipping fast?
    - Which strategy would you use for a large team with scheduled releases?
    - Which one does your favorite open-source project use? (check any repo on GitHub)
