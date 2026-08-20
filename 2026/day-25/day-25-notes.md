@@ -4,15 +4,15 @@
 1. Make 3 commits in your practice repo (commit A, B, C)
 2. Use `git reset --soft` to go back one commit — what happens to the changes?
 
-![Task.1 -2]()
+![Task.1 -2](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-25/Images/Task.1%20-2.png)
 
 3. Re-commit, then use `git reset --mixed` to go back one commit — what happens now?
 
-![Taskk.1 -3]()
+![Taskk.1 -3](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-25/Images/Task.1%20-3.png)
 
 4. Re-commit, then use `git reset --hard` to go back one commit — what happens this time?
 
-![Task.1 -4]()
+![Task.1 -4](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-25/Images/Task.1%20-4.png)
 
 5. Answer in your notes:
    - What is the difference between `--soft`, `--mixed`, and `--hard`?
@@ -26,7 +26,7 @@
    - When would you use each one?
      * `--soft`  : when you want to undo a commit but keep changes staged,for example to edit the commit message.
      * `--mixed` : when you want to undo a commit and unstage changes,so you can modify them before recommitting.
-     * `--reset` : when you want to completely remove commits and all changes.
+     * `--hard` : when you want to completely remove commits and all changes.
 
    - Should you ever use `git reset` on commits that are already pushed?
      * No, once commits are pushed, others may have already pulled and worked on them, so resetting them can cause confusion and conflicts.
@@ -42,7 +42,7 @@
 3. Check `git log` — is commit Y still in the history?
    * `commit -Y` is still part of the history. revert just undo the changes by adding a new revert commit but keep the given commit.
 
-![Task.2]()
+![Task.2](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-25/Images/Task.2.png)
 
 4. Answer in your notes:
    - How is `git revert` different from `git reset`?
@@ -184,20 +184,10 @@ Create a comparison in your notes:
    - Which strategy would you use for a large team with scheduled releases?
      * Gitflow
        
-   - Which one does your favorite open-source project use? (check any repo on GitHub)
+   - Which one does your favorite open-source project use? (check any repo on GitHub)  
+     https://github.com/aws-containers/retail-store-sample-app (GithubFlow)
 
 ---
 
 ### Task 5: Git Commands Reference Update
-Update your `git-commands.md` to cover everything from Days 22–25:
-- Setup & Config
-- Basic Workflow (add, commit, status, log, diff)
-- Branching (branch, checkout, switch)
-- Remote (push, pull, fetch, clone, fork)
-- Merging & Rebasing
-- Stash & Cherry Pick
-- Reset & Revert
-
----
-
-**TrainWithShubham**
+https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-25/git-commands.md
