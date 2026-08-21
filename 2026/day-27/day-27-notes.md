@@ -19,19 +19,13 @@ Before making changes, assess where you stand:
      * Some repos have description and but they are not properly aligned.
        
    - Would a recruiter understand what you've been working on?
+     * It would be hard for them to clearly know about my work.
 
 ---
 
 ### Task 2: Create Your Profile README
-1. Create a **special repository** with the same name as your GitHub username (e.g., `github.com/yourname/yourname`)
-2. Add a `README.md` — this will appear on your profile page
-3. Include the following in your profile README:
-   - A short introduction — who you are, what you're learning
-   - What you're currently working on (e.g., 90 Days of DevOps)
-   - Skills/tools you know or are learning (Linux, Git, Python, Shell, etc.)
-   - Links to your important repos
-   - How to reach you (LinkedIn, Twitter, email — whatever you're comfortable sharing)
-4. Keep it clean and simple — don't overload it with badges and widgets
+   - Created README.md file
+   - Added introduction , skill set and contact details.
 
 ---
 
@@ -85,27 +79,6 @@ For **every repo**, make sure you have:
 
 ---
 
-## Tips for a Good Profile README
-- Keep it **short** — 15-20 lines max
-- Use headers and bullet points — don't write paragraphs
-- Show what you're **doing**, not just what you **know**
-- A few well-placed badges are fine, but don't turn it into a Christmas tree
-- Look at profiles you admire for inspiration — but make yours authentic
-
----
-
-## Submission
-1. Add your `day-27-notes.md` (with before/after screenshots) to `2026/day-27/`
-2. Share the link to your updated GitHub profile
-3. Push to your fork
-
----
-
-## Learn in Public
-
-Share your before & after GitHub profile screenshots on LinkedIn. Tag people who inspired your profile.
-
-`#90DaysOfDevOps` `#DevOpsKaJosh` `#TrainWithShubham`
 
 Happy Learning!
 **TrainWithShubham**
