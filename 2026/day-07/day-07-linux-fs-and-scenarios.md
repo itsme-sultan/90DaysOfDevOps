@@ -1,13 +1,17 @@
 # Linux File System Hierarchy & Scenario-Based Practice  
 
 **Core Directories (Must Know):**
-- `/` (root) - The starting point of everything. Every other directory branches off from there. I would use this to get into ;inux root system.
+- `/` (root) - The starting point of everything. Every other directory branches off from there.  
+  I would use this to get into linux root system.
   
-- `/home` - User home directories. Where your personal stuff lives, in a folder named after you: `/home/yourname.` . I would use this to list down all the user's home directory.
+- `/home` - User home directories. Where your personal stuff lives, in a folder named after you: `/home/yourname.` .   
+  I would use this to list down all the user's home directory.
   
-- `/root` - Root user's home directory. The home directory for the root (admin) user — not to be confused with /, the root of the whole tree.  I would use this to store files that only root should acsess.
+- `/root` - Root user's home directory. The home directory for the root (admin) user — not to be confused with /, the root of the whole tree.  
+  I would use this to store files that only root should acsess.
   
-- `/etc` - Configuration files. Almost every program stores its settings here as plain text (e.g. /etc/passwd, /etc/hosts). I would this to customize 
+- `/etc` - Configuration files. Almost every program stores its settings here as plain text (e.g. /etc/passwd, /etc/hosts).  
+  I would this to customize the program setting.
   
 - `/var/log` - Log files.  where Linux keeps its logs — records of what the system, kernel, and various services have been doing. If something breaks, this is usually the first place to look.  
    `auth.log` : I would use this to check logs related to authentication.  
