@@ -47,7 +47,7 @@ Go through the checklist below. For each item, mark yourself honestly:
 - [ Can do confidently ] Use if/elif/else and case statements
 - [ Can do confidently ] Write for, while, and until loops
 - [ Can do confidently ] Define and call functions with arguments and return values
-- [ ] Use grep, awk, sed, sort, uniq for text processing
+- [Can do confidentl ] Use grep, awk, sed, sort, uniq for text processing
 - [ Can do confidently ] Handle errors with set -e, set -u, set -o pipefail, trap
 - [ Can do confidently ] Schedule scripts with crontab
 
@@ -78,10 +78,25 @@ Go through the checklist below. For each item, mark yourself honestly:
 Answer these from memory (no Googling). Then verify your answers:
 
 1. What does `chmod 755 script.sh` do?
+   - It will change file permission and will give rwx (read,write,execute)  access to the user and rx (read,execute) access to the group and other user.
+
 2. What is the difference between a process and a service?
+  - Process : any running stance of the program
+  - Service : a service is a background process 
+
 3. How do you find which process is using port 8080?
+   - Run to find process:  `netstat -tulnp |grep 8080`
+
 4. What does `set -euo pipefail` do in a shell script?
+   - its error handling command, it will exit the script as soon as it encounters any error.
+   - set -e - exit if error occurs
+   - set -u - exit if there is any undefine variable
+   - set -o pipefail - exit if any pipe command fails
+
 5. What is the difference between `git reset --hard` and `git revert`?
+   - `git reset --hard` : head move back to given commit and changes will be deleted.
+   - `git revert` : deleted the changes by adding a new commit.
+
 6. What branching strategy would you recommend for a team of 5 developers shipping weekly?
 7. What does `git stash` do and when would you use it?
 8. How do you schedule a script to run every day at 3 AM?
