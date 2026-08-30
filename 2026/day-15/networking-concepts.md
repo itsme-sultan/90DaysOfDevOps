@@ -1,6 +1,7 @@
 # Day 15 – Networking Concepts: DNS, IP, Subnets & Ports
 
 ## Task 1: DNS – How Names Become IPs  
+- what happens when you type `google.com` in a browser?  
 **Answer**
 
     1- First the browser checks in local cache for the corresponding IP address.
@@ -13,8 +14,6 @@
     4- The web server processes the request, may talk to application servers and databases, 
     and then sends back the webpage you see.
 
-- what happens when you type `google.com` in a browser?  
-     
 - What are DNS record types?  
   A DNS record is just a piece of information stored in the Domain Name System
   1. A Record : Resolve the domain name into ipv4 address. Domain → ipv4.
