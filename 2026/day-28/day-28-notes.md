@@ -78,11 +78,11 @@ Go through the checklist below. For each item, mark yourself honestly:
 Answer these from memory (no Googling). Then verify your answers:
 
 1. What does `chmod 755 script.sh` do?
-   - It will change file permission and will give rwx (read,write,execute)  access to the user and rx (read,execute) access to the group and other user.
+   - It will change file permission and will give rwx (read,write,execute)  access to the owner and rx (read,execute) access to the group and other user.
 
 2. What is the difference between a process and a service?
-  - Process : any running stance of the program
-  - Service : a service is a background process 
+     - Process : any running stance of the program
+     - Service : a service is a background process 
 
 3. How do you find which process is using port 8080?
    - Run to find process:  `netstat -tulnp |grep 8080`
@@ -98,30 +98,39 @@ Answer these from memory (no Googling). Then verify your answers:
    - `git revert` : deleted the changes by adding a new commit.
 
 6. What branching strategy would you recommend for a team of 5 developers shipping weekly?
-7. What does `git stash` do and when would you use it?
-8. How do you schedule a script to run every day at 3 AM?
-9. What is the difference between `git fetch` and `git pull`?
-10. What is LVM and why would you use it instead of regular partitions?
+   - GitHub flow
 
+7. What does `git stash` do and when would you use it?
+   - It temporarily save your changes so that you can work on some **hot fix** without loosing your work.
+   - Use it when you are in need to switch the branch to do some **hot fix**. use `git stash` to save the current changes temporarily and switch the branch for hot fix.
+
+8. How do you schedule a script to run every day at 3 AM?
+   - Will use Cron job : 0 3 * * *
+
+9. What is the difference between `git fetch` and `git pull`?
+    - `git fetch` : it only download all the changes from remote repo.
+    - `git pull` : download the changes and merge them with local
+
+10. What is LVM and why would you use it instead of regular partitions?
+    - LVM is a layer between physical disks and filesystems.
+    - it is a flexible storage management system in Linux that lets you resize, combine, and manage disks dynamically, unlike regular partitions which are fixed in size once created.
+      
 ---
 
 ### Task 4: Organize Your Work
-1. Make sure all your daily submissions (day-1 through day-27) are committed and pushed
-2. Check that your `git-commands.md` is up to date
-3. Check that your shell scripting cheat sheet is complete
-4. Verify your GitHub profile and repos are clean (from Day 27)
+1. Make sure all your daily submissions (day-1 through day-27) are committed and pushed [ ✅ ]
+2. Check that your `git-commands.md` is up to date [ ✅ ]
+3. Check that your shell scripting cheat sheet is complete [ ✅ ]
+4. Verify your GitHub profile and repos are clean (from Day 27) [✅ ]
 
 ---
 
 ### Task 5: Teach It Back
-Pick **one topic** you've learned and write a short explanation (5-10 lines) as if you're teaching it to someone who has never heard of it. Add it to your `day-28-notes.md`.
 
-Examples:
 - Explain Git branching to a non-developer
-- Explain file permissions to a new Linux user
-- Explain what a crontab is and why sysadmins use it
-
-Teaching is the best test of understanding.
+  Imaging you are writing an article and one of your fried want to contribute on that. You don't want him to work on the original file so that work remain intact.
+  So you have created a copy of your original file and asked them to work on this file.
+  The copy of your original file is actually a branch. You have the exact copy of original file and start working on it without affecting the original file.
 
 ---
 
