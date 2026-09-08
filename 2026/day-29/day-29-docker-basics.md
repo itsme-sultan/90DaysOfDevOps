@@ -95,7 +95,7 @@ The daemon (dockerd) does the real work — building images, running containers,
    `
    docker run hello-world`
 
-![Task.2]()
+![Task.2](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-29/Images/Task.2.jpg)
    
 7. Read the output carefully — it explains what just happened
    - Docker unable to find image locally.
@@ -107,21 +107,28 @@ The daemon (dockerd) does the real work — building images, running containers,
 
 ### Task 3: Run Real Containers
 1. Run an **Nginx** container and access it in your browser
+![Task.3-1](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-29/Images/Task.3-1.png)
+
 2. Run an **Ubuntu** container in interactive mode — explore it like a mini Linux machine
 3. List all running containers
 4. List all containers (including stopped ones)
 5. Stop and remove a container
+
+![task.3-4](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-29/Images/Task.3-4.png)
 
 ---
 
 ### Task 4: Explore
 1. Run a container in **detached mode** — what's different?
   - Docker starts the container in the background and immediately hands your terminal back, printing just the container ID.
+![Task.4-1](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-29/Images/Task.4-1.jpg)
+
 2. Give a container a custom **name**
 3. Map a **port** from the container to your host
 4. Check **logs** of a running container
 5. Run a command **inside** a running container
 
+![Tassk.4-4](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-29/Images/Task.4-4.png)
 ---
 
 
