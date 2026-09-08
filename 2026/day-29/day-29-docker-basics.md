@@ -1,38 +1,87 @@
 # Day 29 – Introduction to Docker
 
-## Task
-Today's goal is to **understand what Docker is and run your first container**.
-
-You will:
-- Learn why containers exist and how they differ from VMs
-- Install Docker on your machine
-- Run and explore containers from Docker Hub
-
----
-
-## Expected Output
-- A markdown file: `day-29-docker-basics.md`
-- Screenshots of your running containers
-
----
-
-## Challenge Tasks
-
 ### Task 1: What is Docker?
--Docker is a platform for building, running, and managing containers.  
--A container is a lightweight, portable package that includes everything needed to run an application: the code, dependencies, libraries, and configuration.  
--Why we need container :  
-Imagin a situation where devolper devlop a code and it runs in his machine however client said its not ruuning in mine. It happened because of environemnt defference, different os, different version.  
-To solve this issue we need containerso sp that we have can smilar environment and our codr run without failur.
-- Containers vs Virtual Machines — what's the real difference?  
-  VM need allocation of the resource that means we need to dedicated hardware while container use shared resource and once we delete the container all resources is free and available for the use.
-- What is the Docker architecture? (daemon, client, images, containers, registry)
+- Docker is a platform for building, running, and managing containers.  
+- A container is a lightweight, portable package that includes everything needed to run an application: the code, dependencies, libraries, and configuration. 
 
-Draw or describe the Docker architecture in your own words.  
--Docker Client -thorugh this we interact with docker like CLI opr docker deksptop app  
--Docker Engine  
--Docker Daemon  - Brain of the container --> it create images, run container, manager network & volume.- Runs in the background.
--Docker Registry  -Store the docker Image --> Privet & public -->doker hub is example of public registry
+### Why we need container :  
+- Imagin a situation where devolper devlop a code and it runs in his machine however client said its not ruuning in mine. It happened because of environemnt defference, different os, different version.  
+- To solve this issue we need containerso so that we have smilar environment and our codr run without failur.  
+- You can build locally,deploy to the cloud and run anywhere on any server.
+
+### Containers vs Virtual Machines — what's the real difference?
+  * Virtual Machines (VMs): Each VM includes a full guest OS, virtualized hardware, and runs on a hypervisor. Heavy (GBs), slow to boot (minutes).
+  * Containers: Share the host machine's OS kernel but isolate the application's processes, filesystem, and network. Lightweight (MBs), boot in seconds.
+  
+---
+
+### Docker architecture
+
+### 1. Docker Client
+
+### What it is
+The Docker client is the command-line interface (CLI) used to interact with Docker. It acts as the command center.
+
+### How it works
+You type commands in the Docker client, and it sends those requests to the Docker daemon, which performs the actual work.
+
+### Example Commands
+- `docker build`
+- `docker run`
+- `docker pull`
+- `docker push`
+
+---
+
+### 2. Docker Daemon
+
+### What it is
+The Docker daemon (`dockerd`) is the background service that manages Docker objects such as images, containers, networks, and volumes.
+
+### How it works
+The daemon:
+- Listens for Docker API requests from the Docker client
+- Builds images
+- Runs and manages containers
+- Handles networking and storage
+
+
+---
+
+### 3. Docker Hub
+
+### What it is
+Docker Hub is a cloud-based public registry for Docker images.
+
+### How it works
+It works like an app store for container images. 
+
+You can:
+- **Pull** images created by others
+- **Push** your own images
+
+### Usage
+When you need an image to create a container, you can pull it from Docker Hub.
+
+---
+
+### 4. Docker Registry
+
+### What it is
+A Docker registry is a system that stores and distributes Docker images. Docker Hub is the most popular public registry,but you can also create private registries.
+
+### How it works
+Registries:
+- Store Docker images
+- Allow users to pull images
+- Allow users to push images
+
+Private registries are commonly used by companies to securely store internal application images.
+
+<img width="1472" height="520" alt="image" src="https://github.com/user-attachments/assets/5cead501-35af-4b41-86a6-1eb893b71c16" />
+
+The daemon (dockerd) does the real work — building images, running containers, talking to registries. The CLI is just how you send it commands.
+
 
 ---
 
@@ -45,8 +94,14 @@ Draw or describe the Docker architecture in your own words.
 5. Run the hello-world container using command  
    `
    docker run hello-world`
+
+![Task.2]()
    
 7. Read the output carefully — it explains what just happened
+   - Docker unable to find image locally.
+   - Docker pull the `Hello-world` image from the docker hub.
+   - Docker created a container of `Hello World`.
+   - Container printed the output `Hello from Docker!` and exited
 
 ---
 
@@ -61,6 +116,7 @@ Draw or describe the Docker architecture in your own words.
 
 ### Task 4: Explore
 1. Run a container in **detached mode** — what's different?
+  - Docker starts the container in the background and immediately hands your terminal back, printing just the container ID.
 2. Give a container a custom **name**
 3. Map a **port** from the container to your host
 4. Check **logs** of a running container
@@ -68,32 +124,7 @@ Draw or describe the Docker architecture in your own words.
 
 ---
 
-## Hints
-- `docker run`, `docker ps`, `docker stop`, `docker rm`
-- Interactive mode: `-it` flag
-- Detached mode: `-d` flag
-- Port mapping: `-p host:container`
-- Naming: `--name`
-- Logs: `docker logs`
-- Exec into container: `docker exec`
 
----
-
-## Why This Matters for DevOps
-Docker is the foundation of modern deployment. Every CI/CD pipeline, Kubernetes cluster, and microservice architecture starts with containers. Today you took the first step.
-
----
-
-## Submission
-1. Add your `day-29-docker-basics.md` to `2026/day-29/`
-2. Commit and push to your fork
-
----
-
-## Learn in Public
-Share your first Docker container screenshot on LinkedIn.
-
-`#90DaysOfDevOps` `#DevOpsKaJosh` `#TrainWithShubham`
 
 Happy Learning!
 **TrainWithShubham**
