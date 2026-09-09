@@ -3,7 +3,8 @@
 ### Task 1: Docker Images
 1. Pull the `nginx`, `ubuntu`, and `alpine` images from Docker Hub  
    used command `docker pull nginx` to pull the images from docker likewise for other also.  
-![Task.1]()
+
+![Task.1](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-30/Images/Task.1.png)
 
 2. List all images on your machine — note the sizes
 3. Compare `ubuntu` vs `alpine` — why is one much smaller?
@@ -11,16 +12,18 @@
    - Ubuntu is larger because it includes GNU tools and glibc, whereas Alpine uses BusyBox and musl, making it much smaller.
 
 4. Inspect an image — what information can you see?  
-![Task.1-4]()
 
-    - Image ID: sha256:05b8cb6...
-    - Image Tag: nginx:latest
-    - Exposed Port: 80/tcp (HTTP)
-    - Environment variable
-    - ENTRYPOINT
-    - CMD
-    - Lables,maintainer
-    - 7 layers |Each layer typically corresponds to a step in the Dockerfile
+![Task.1-4](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-30/Images/Task.1-4.png)
+
+ - Image ID: sha256:05b8cb6...
+ - Image Tag: nginx:latest
+ - Exposed Port: 80/tcp (HTTP)
+ - Environment variable
+ - ENTRYPOINT
+ - CMD
+ - Lables,maintainer
+ - 7 layers |Each layer typically corresponds to a step in the Dockerfile
+
 5. Remove an image you no longer need
    - remove nginx image: ` docker rmi nginx`
 
@@ -28,8 +31,9 @@
 
 ### Task 2: Image Layers
 1. Run `docker image history nginx` — what do you see?
-   - The command `docker image history <image` lets you trace how an image was built layer by layer  
-![Task.2-1]()
+   - The command `docker image history <image>` lets you trace how an image was built layer by layer  
+
+![Task.2-1](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-30/Images/Task.2-1.png)
 
 2. Each line is a **layer**. Note how some layers show sizes and some show 0B
    - Layers with a size (MB or kB) were created by instructions that modify the filesystem,such as RUN, COPY, or ADD.
@@ -59,7 +63,7 @@ Practice the full lifecycle on one container:
 
 Check `docker ps -a` after each step — observe the state changes.
 
-![Task.3]()
+![Task.3](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-30/Images/Task.3.png)
 
 ---
 
@@ -67,14 +71,16 @@ Check `docker ps -a` after each step — observe the state changes.
 1. Run an Nginx container in detached mode
 2. View its **logs**
 3. View **real-time logs** (follow mode)
-![Task.4-3]()
+![Task.4-3](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-30/Images/Task.4-3.png)
 
 4. **Exec** into the container and look around the filesystem
 5. Run a single command inside the container without entering it
+![Task.4-5](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-30/Images/Task.4-5.png)
+
 6. **Inspect** the container — find its IP address, port mappings, and mounts
    ` docker inspect <id> `
 
-![Task.4-6]()
+![Task.4-6](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-30/Images/Task.4-6.png)
 
 ---
 
