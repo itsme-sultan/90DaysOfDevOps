@@ -1,37 +1,48 @@
 # Day 30 – Docker Images & Container Lifecycle
 
-## Task
-Today's goal is to **understand how images and containers actually work**.
-
-You will:
-- Learn the relationship between images and containers
-- Understand image layers and caching
-- Master the full container lifecycle
-
----
-
-## Expected Output
-- A markdown file: `day-30-images.md`
-- Screenshots of key commands
-
----
-
-## Challenge Tasks
-
 ### Task 1: Docker Images
 1. Pull the `nginx`, `ubuntu`, and `alpine` images from Docker Hub  
    used command `docker pull nginx` to pull the images from docker likewise for other also.
-3. List all images on your machine — note the sizes
-4. Compare `ubuntu` vs `alpine` — why is one much smaller?
-5. Inspect an image — what information can you see?
-6. Remove an image you no longer need
+![Task.1]()
+
+2. List all images on your machine — note the sizes
+3. Compare `ubuntu` vs `alpine` — why is one much smaller?
+   - Ubuntu is a full-featured Linux distribution, while Alpine is a minimal distribution optimized for containers.
+   - Ubuntu is larger because it includes GNU tools and glibc, whereas Alpine uses BusyBox and musl, making it much smaller.
+
+4. Inspect an image — what information can you see?
+![Task.1-4]()
+
+    - Image ID: sha256:05b8cb6...
+    - Image Tag: nginx:latest
+    - Exposed Port: 80/tcp (HTTP)
+    - Environment variable
+    - ENTRYPOINT
+    - CMD
+    - Lables,maintainer
+    - 7 layers |Each layer typically corresponds to a step in the Dockerfile
+5. Remove an image you no longer need
+   - remove nginx image: ` docker rmi nginx`
 
 ---
 
 ### Task 2: Image Layers
 1. Run `docker image history nginx` — what do you see?
+   - The command `docker image history <image` lets you trace how an image was built layer by layer
+![Task.2-1]()
+
 2. Each line is a **layer**. Note how some layers show sizes and some show 0B
+   - Layers with a size (MB or kB) were created by instructions that modify the filesystem,such as RUN, COPY, or ADD.
+   - Layers showing 0B were created by instructions that only change metadata, such as ENV, CMD, EXPOSE, LABEL, or ENTRYPOINT. These do not change the filesystem.
+
 3. Write in your notes: What are layers and why does Docker use them?
+   - Each instruction in a Dockerfile (FROM, RUN, COPY, ADD, etc.) creates a new layer.
+   - Layers are stacked on top of each other to form the final image.
+   - **Why Docker Uses Layers**
+     1. Reusability - Common base layers (like ubuntu:20.04) can be shared across many images.
+     2. Caching - If a layer hasn’t changed, Docker reuses it. E.g: If you only change index.html, Docker won’t rebuild the apt-get install step.
+     3. Efficiency - Layers are immutable and stored once.Multiple containers can run from the same image without duplicating data.
+     4. Portability - Layers are distributed separately.When you docker pull, Docker only downloads missing layers.
 
 ---
 
@@ -47,6 +58,8 @@ Practice the full lifecycle on one container:
 8. **Remove** it
 
 Check `docker ps -a` after each step — observe the state changes.
+
+![Task.3]()
 
 ---
 
@@ -68,25 +81,3 @@ Check `docker ps -a` after each step — observe the state changes.
 
 ---
 
-## Hints
-- Image history: `docker image history`
-- Create without starting: `docker create`
-- Follow logs: `docker logs -f`
-- Inspect: `docker inspect`
-- Cleanup: `docker system df`, `docker system prune`
-
----
-
-## Submission
-1. Add your `day-30-images.md` to `2026/day-30/`
-2. Commit and push to your fork
-
----
-
-## Learn in Public
-Share what surprised you about image layers or container states on LinkedIn.
-
-`#90DaysOfDevOps` `#DevOpsKaJosh` `#TrainWithShubham`
-
-Happy Learning!
-**TrainWithShubham**
