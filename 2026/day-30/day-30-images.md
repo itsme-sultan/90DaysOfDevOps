@@ -2,7 +2,7 @@
 
 ### Task 1: Docker Images
 1. Pull the `nginx`, `ubuntu`, and `alpine` images from Docker Hub  
-   used command `docker pull nginx` to pull the images from docker likewise for other also.
+   used command `docker pull nginx` to pull the images from docker likewise for other also.  
 ![Task.1]()
 
 2. List all images on your machine — note the sizes
@@ -10,7 +10,7 @@
    - Ubuntu is a full-featured Linux distribution, while Alpine is a minimal distribution optimized for containers.
    - Ubuntu is larger because it includes GNU tools and glibc, whereas Alpine uses BusyBox and musl, making it much smaller.
 
-4. Inspect an image — what information can you see?
+4. Inspect an image — what information can you see?  
 ![Task.1-4]()
 
     - Image ID: sha256:05b8cb6...
@@ -28,7 +28,7 @@
 
 ### Task 2: Image Layers
 1. Run `docker image history nginx` — what do you see?
-   - The command `docker image history <image` lets you trace how an image was built layer by layer
+   - The command `docker image history <image` lets you trace how an image was built layer by layer  
 ![Task.2-1]()
 
 2. Each line is a **layer**. Note how some layers show sizes and some show 0B
@@ -67,17 +67,25 @@ Check `docker ps -a` after each step — observe the state changes.
 1. Run an Nginx container in detached mode
 2. View its **logs**
 3. View **real-time logs** (follow mode)
+![Task.4-3]()
+
 4. **Exec** into the container and look around the filesystem
 5. Run a single command inside the container without entering it
 6. **Inspect** the container — find its IP address, port mappings, and mounts
+   ` docker inspect <id> `
+
+![Task.4-6]()
 
 ---
 
 ### Task 5: Cleanup
-1. Stop all running containers in one command
-2. Remove all stopped containers in one command
-3. Remove unused images
-4. Check how much disk space Docker is using
-
+1. Stop all running containers in one command  
+   ` docker kill $(docker ps -q) `
+2. Remove all stopped containers in one command  
+   ` docker system prune `
+3. Remove unused images  
+   ` docker image prune -a `
+4. Check how much disk space Docker is using  
+   ` docker system df `
 ---
 
