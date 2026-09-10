@@ -11,8 +11,8 @@
 
 **Verify:** The message prints on `docker run`
 
-![Task1.1]()
-![Task.1-2]()
+![Task1.1](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-31/Images/Task.1-1.png)
+![Task.1-2](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-31/Images/Task.1-2.png)
 
 ---
 
@@ -27,20 +27,20 @@ Create a new Dockerfile that uses **all** of these instructions:
 
 Build and run it. Understand what each line does.
 
-![Task.2]()
+![Task.2](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-31/Images/Task.2.png)
 ---
 
 ### Task 3: CMD vs ENTRYPOINT
 1. Create an image with `CMD ["echo", "hello"]` — run it, then run it with a custom command. What happens?
   - When you run the container with a custom command (e.g., echo "custom command"), the custom command completely overrides the CMD
 
-![Task.3-1]()
+![Task.3-1](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-31/Images/Tssk.3-1.png)
 
 2. Create an image with `ENTRYPOINT ["echo"]` — run it, then run it with additional arguments. What happens?
 - Run without arguments: The container runs echo with no arguments,resulting in a blank line (no output).
 - Run with additional arguments: When you pass arguments (e.g., hello-world), they are appended to the ENTRYPOINT, so it runs echo hello-world and outputs:
 
-![Task.3-2]()
+![Task.3-2](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-31/Images/Task.3-2.png)
 
 3. Write in your notes: When would you use CMD vs ENTRYPOINT?
   - Use CMD when you want to provide a default command that can be changed easily when you run the container.
@@ -63,7 +63,7 @@ Build and run it. Understand what each line does.
    EXPOSE 80
    ```
 
-![Task.4]()
+![Task.4](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-31/Images/Task.4.png)
 
 ---
 
@@ -72,7 +72,7 @@ Build and run it. Understand what each line does.
 2. Add entries for: `node_modules`, `.git`, `*.md`, `.env`
 3. Build the image — verify that ignored files are not included
 
-![Task.5]()
+![Task.5](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-31/Images/Task.5.png)
 
 -Verified there is no `node_modules`, `.git`, `*.md`, `.env` copied in the container.
 
@@ -120,7 +120,7 @@ COPY . .
 CMD ["python","app.py"]
 ```
 
-![image]()
+![image](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-31/Images/Task.6-2.png)
 
 Observation:
 Docker reused cached layers for: Base image,Working directory,Dependency installation
