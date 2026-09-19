@@ -1,0 +1,46 @@
+services:
+  mydb:
+    image: mysql
+    container_name: mysql_db  #container-name could be different from service-name, host will always service name
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: admin@123
+      MYSQL_DATABASE: webapp-db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin@123
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - wordpress-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+  wordpress-app:
+    image: wordpress
+    container_name: wordpress-site
+    networks:
+      - wordpress-network
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: mydb
+      WORDPRESS_DB_NAME: webapp-db
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: admin@123
+    depends_on:
+      mydb:
+        condition: service_healthy
+
+volumes:
+  mysql-data:
+
+networks:
+  wordpress-network:
+    driver: bridge
+
