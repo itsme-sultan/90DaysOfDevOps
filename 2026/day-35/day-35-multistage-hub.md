@@ -9,7 +9,7 @@ Note down the size — you'll compare it later.
 
 [Dockerfile](2026/day-35/node-multistage-demo/Dockerfile)
 
-![Task.1]()
+![Task.1](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-35/Images/Task.1.png)
 
 ---
 
@@ -25,7 +25,7 @@ Write in your notes: Why is the multi-stage image so much smaller?
 
 [multistage-dockerfile](2026/day-35/node-multistage-demo/Dockerfile-multistage)
 
-![Task.2]()
+![Task.2](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-35/Images/task-2.png)
 
 ---
 
@@ -36,19 +36,19 @@ Write in your notes: Why is the multi-stage image so much smaller?
 4. Push it to Docker Hub
 5. Pull it on a different machine (or after removing locally) to verify
 
-![Task.3-2]()
+![Task.3-2](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-35/Images/Task.3-2.png)
 
-![Task.3-5]()
+![Task.3-5](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-35/Images/Task.3-5.png)
 
 ---
 
 ### Task 4: Docker Hub Repository
 1. Go to Docker Hub and check your pushed image
 2. Add a **description** to the repository
-![Task.4-2]()
+![Task.4-2](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-35/Images/Task.4-2.png)
 
 3. Explore the **tags** tab — understand how versioning works
-![Task.4-3]()
+![Task.4-3](https://github.com/itsme-sultan/90DaysOfDevOps/blob/master/2026/day-35/Images/Task.4-3.png)
 
 4. Pull a specific tag vs `latest` — what happens?
    - Pulling a specific tag asks Docker for that named version only, while omitting the tag makes Docker use :latest by default.
@@ -63,6 +63,8 @@ Apply these to one of your images and rebuild:
 4. Use **specific tags** for base images (not `latest`)
 
 Check the size before and after.
+
+[dockerfile](2026/day-35/node-multistage-demo/Dockerfile.final)
 
 ---
 
