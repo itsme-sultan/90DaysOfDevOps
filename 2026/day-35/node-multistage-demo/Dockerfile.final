@@ -1,0 +1,27 @@
+#Stage 1:  build stage
+
+FROM node:20 AS builder
+WORKDIR /app
+COPY package.json .
+RUN npm install
+
+#Stage 2: Runtime
+
+FROM node:20-alpine AS deployer
+
+#Create non-root user
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+
+WORKDIR /app
+
+COPY --from=builder /app .
+
+#change owner
+RUN chown -R appuser:appgroup /app
+
+EXPOSE 3000
+
+#switch user
+USER appuser
+
+CMD ["server.js"]
